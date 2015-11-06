@@ -1,27 +1,29 @@
-sjcx-tipbot
+neos-tipbot
 ===========
+Broketech: This is a tipbot I gutted for my use, not to be confused with Infernoman's tipbot. Nothing is really cleaned up, and some original code is simply commented for reference.
 
-Tip anyone on twitter or IRC with SJCX the coin used in http://storj.io/. For security and lower server demands there is no bitcoin/counterparty node on the server. All the blockchain information is collected from blockchain.info and blockscan.com. All withdrawal requests are downloaded and handled on a separate system. Another benefit is that there is no BTC fee for tips.
+Tip anyone on twitter with NeosCoin currently. For security and lower server demands there is no crypto currency node on the server. All the blockchain information is collected from an external explorer. All withdrawal requests are downloaded and handled on a separate system. Another benefit is that there is no fee for tips.
 
 ###Dependencies
 1. MongoDB
 2. Node.js
-3. bitcoind
-4. counterpartyd
+3. neoscoind
+
 
 ###Install
 ```
-git clone https://github.com/tipsjcx/sjcx-tipbot.git
-cd sjcx-tipbot
+git clone https://github.com/tipsjcx/neos-tipbot.git
+cd neos-tipbot
 npm install
 Enter your twitter api tokens in twitterbot.js
-Change the nick name in ircbot.js
-node app.js
+node app.js&
+then run 'node reseed.js' to initialize user addresses
 ```
 
-###RedditBot Commands
-+/u/botName register <br>
-+/u/botname tip "amount" <br>
-+/u/botName balance <br>
-+/u/botName withdraw "amount" "address"
-
+###TODO
+1. Make currency configuration modular (centrally configured)
+2. Make explorer configuration modular (centrally configured)
+3. Direct messages for privacy
+4. Timestamps on everything in database
+5. Clean up
+```
