@@ -1,27 +1,25 @@
 // Copyright © 2014 tipsjcx
+// butchery by broketech 2014
+
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/countertipper');
+var db = monk('127.0.0.1:27017/neostipper');
 var bcrypt = require('bcrypt');
 
 var blockscan = require('./blockscan.js');
 bs = new blockscan();
 
 // Setup the ircbot
-var ircbot = require('./ircbot.js');
-var ircb = new ircbot(bs);
+// var ircbot = require('./ircbot.js');
+// var ircb = new ircbot(bs);
 
 // set up the twitterbot
 var twitterbot = require("./twitterbot.js");
 var tbot = new twitterbot(bs);
 
 // set up slack bot
-var slackbot = require("./slackbot");
-var sbot = new slackbot(bs);
-
-// set up the redditbot
-var redditbot = require("./redditbot.js");
-var rbot = new redditbot(bs);
+// var slackbot = require("./slackbot");
+// var sbot = new slackbot(bs);
 
 // The control server
 var net = require('net');
